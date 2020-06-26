@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/zhouyic/spring_cloud_demo_config
+          uri: https://github.com/zhouyic/spring_cloud_demo_config_respo
           skip-ssl-validation: true
   rabbitmq:
     host: 127.0.0.1
