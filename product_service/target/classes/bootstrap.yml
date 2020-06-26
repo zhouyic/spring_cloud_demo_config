@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    config:
+      name: product #应用名称,需要对应git中配置文件名称的前半部分
+      profile: prod # 开发环境
+      label: master # git中的分支
+      discovery:
+        enabled: true #开启服务发现
+        service-id: config-server
+      uri: http://localhost:1000 # config-server的请求地址
+#开启动态刷新的请求路径端点
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: refresh
+#配置Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9100/eureka/ #多个eurekaserver之间用,隔开
+  instance:
+    prefer-ip-address: true #使用ip地址注册

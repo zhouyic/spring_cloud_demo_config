@@ -1,0 +1,28 @@
+server:
+  port: 1001
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zhouyic/spring_cloud_demo_config
+          skip-ssl-validation: true
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+#����Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9100/eureka/ #���eurekaserver֮����,����
+  instance:
+    prefer-ip-address: true #ʹ��ip��ַע��
